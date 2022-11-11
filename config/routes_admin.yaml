@@ -1,0 +1,9 @@
+# Define your admin routes here
+controllers:
+    resource: ../src/Controller/Admin/
+    type: attribute
+app_reportings_api:
+    type: rest
+    prefix: /admin/api
+    resource: App\Controller\Admin\ReportingController
+    name_prefix: app.

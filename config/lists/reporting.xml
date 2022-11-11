@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<list xmlns="http://schemas.sulu.io/list-builder/list">
+    <key>reportings</key>
+
+    <properties>
+        <property name="id" visibility="no" translation="sulu_admin.id">
+            <field-name>id</field-name>
+            <entity-name>App\Entity\Reporting</entity-name>
+        </property>
+
+        <property name="title" visibility="always" searchability="yes" translation="sulu_admin.title">
+            <field-name>title</field-name>
+            <entity-name>App\Entity\Reporting</entity-name>
+        </property>
+
+        <property name="created_at" visibility="yes" translation="app.created_at" type="datetime">
+            <field-name>created_at</field-name>
+            <entity-name>App\Entity\Reporting</entity-name>
+        </property>
+
+        <property name="type" visibility="yes" searchability="yes" translation="app.type">
+            <field-name>type</field-name>
+            <entity-name>App\Entity\Reporting</entity-name>
+        </property>
+    </properties>
+</list>
+

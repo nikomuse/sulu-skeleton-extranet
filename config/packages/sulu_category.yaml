@@ -1,0 +1,5 @@
+sulu_category:
+  objects:
+    category:
+      model:                App\Entity\Category
+      repository:           Sulu\Bundle\CategoryBundle\Entity\CategoryRepository

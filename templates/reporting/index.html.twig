@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reportings{% endblock %}
+
+{% block content %}
+    <h1>Reportings</h1>
+    <div id="reportings">
+    {% for reporting in reportings %}
+    <div class="reporting" >
+        <strong>{{ reporting.title }}</strong>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}

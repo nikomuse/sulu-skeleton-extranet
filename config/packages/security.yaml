@@ -1,12 +1,4 @@
 security:
-    role_hierarchy:
-        # Admin
-        ROLE_SULU_USER: [ ROLE_USER ]
-        ROLE_SULU_ADMIN: [ ROLE_SULU_USER ]
-        ROLE_SULU_SUPER_ADMIN: [ ROLE_SULU_ADMIN ]
-        # Front
-        ROLE_EXTRANET_USER: [ ROLE_USER, ROLE_SULU_ADMIN ]
-        ROLE_SULU_FRAUD: [ ROLE_EXTRANET_USER ]
     enable_authenticator_manager: true
 
     access_decision_manager:
@@ -17,6 +9,7 @@ security:
     password_hashers:
         Sulu\Bundle\SecurityBundle\Entity\User: bcrypt
 
+
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         sulu:
@@ -25,19 +18,19 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+
         - { path: ^/admin/reset, roles: PUBLIC_ACCESS }
         - { path: ^/admin/security/reset, roles: PUBLIC_ACCESS }
         - { path: ^/admin/login$, roles: PUBLIC_ACCESS }
-        - { path: ^/admin/logout$, roles: PUBLIC_ACCESS }
-        - { path: ^/admin/2fa, role: PUBLIC_ACCESS }
+        - { path: ^/admin/2fa, roles: PUBLIC_ACCESS }
         - { path: ^/admin/_wdt, roles: PUBLIC_ACCESS }
         - { path: ^/admin/_profiler, roles: PUBLIC_ACCESS }
         - { path: ^/admin/translations, roles: PUBLIC_ACCESS }
         - { path: ^/admin$, roles: PUBLIC_ACCESS }
         - { path: ^/admin/$, roles: PUBLIC_ACCESS }
         - { path: ^/admin/p/, roles: PUBLIC_ACCESS }
-        - { path: ^/admin, roles: ROLE_SULU_ADMIN }
-#        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_USER }
+        # customize
         - { path: ^/login$, roles: PUBLIC_ACCESS }
         - { path: ^/logout$, roles: PUBLIC_ACCESS }
         - { path: ^/reset-password  , roles: PUBLIC_ACCESS }
